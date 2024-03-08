@@ -9,8 +9,10 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text('Flutter Web Authentication with Auth0',
-              style: TextStyle(color: Colors.white)),
+          title: const Center(
+            child: Text('Auth0 Universal', 
+                style: TextStyle(color: Colors.white)),
+          ),
           backgroundColor: Colors.black87),
       body: Center(
         child: Column(children: [
@@ -18,7 +20,7 @@ class LoginPage extends StatelessWidget {
           const Flexible(
               flex: 10,
               child: Text(
-                  '[ This app uses Go_Router for navigation and BloC for state management. ]')),
+                  'This app uses Go_Router for navigation\n and BloC for state management', textAlign: TextAlign.center)),
           const Spacer(),
           Flexible(
             flex: 2,

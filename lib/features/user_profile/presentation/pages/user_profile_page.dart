@@ -24,20 +24,20 @@ class UserProfilePage extends StatelessWidget {
               '${userProfile!.nickname}', '${userProfile.pictureUrl}', context),
           body: Center(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(4.0),
               child: Column(children: [
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
-                      '[ NOTE: Use the "--web-renderer=html" option to show the picture avatar properly. ]'),
+                      'Use the "--web-renderer=html" option\n to show the picture avatar properly', textAlign: TextAlign.center),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(50, 20, 50, 0),
+                  padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
                   child: Table(
                       border: TableBorder.all(),
                       columnWidths: const <int, TableColumnWidth>{
-                        0: FlexColumnWidth(1),
-                        1: FlexColumnWidth(3),
+                        0: FlexColumnWidth(3),
+                        1: FlexColumnWidth(5),
                       },
                       children: [
                         TableRow(children: [

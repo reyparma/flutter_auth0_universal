@@ -24,7 +24,6 @@ class AuthenticationRemoteDataSourceImpl
     if (kIsWeb) {
       // Install required callback
       auth0Web.onLoad().then((credentials) {
-        print(credentials);
         // Do nothing
       });
     }
@@ -39,13 +38,13 @@ class AuthenticationRemoteDataSourceImpl
         credentials = await auth0Web.loginWithPopup();
       } else {
         credentials = await auth0
-            .webAuthentication()
+            .webAuthentication(scheme: dotenv.env['AUTH0_CUSTOM_SCHEME'])
             .login(
-                // Even with these settings, login popup still shows on logout in IOS
-                useEphemeralSession: true,
-                parameters: {
-                  'prompt': 'login'
-                }
+                // Even with these settings, login popup still shows when logging out in IOS
+                // useEphemeralSession: true,
+                // parameters: {
+                //   'prompt': 'login'
+                // }
                 );
       }
       final userModel = UserModel(
@@ -73,8 +72,7 @@ class AuthenticationRemoteDataSourceImpl
         await auth0Web.logout(returnToUrl: 'http://localhost:3000');
       } else {
         await auth0
-            //.webAuthentication(scheme: dotenv.env['AUTH0_CUSTOM_SCHEME'])
-            .webAuthentication(scheme: 'https')
+            .webAuthentication(scheme: dotenv.env['AUTH0_CUSTOM_SCHEME'])
             .logout();
       }
     } on Exception catch (e) {

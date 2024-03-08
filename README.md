@@ -5,4 +5,4 @@ Before running this app, make sure you have configured an Auth0 application and 
 
 <img width="650" alt="universal_login" src="https://github.com/reyparma/flutter_auth0_universal/assets/5339530/669426be-d8c1-4430-bcaf-5ce2b7d9b085">
 
-<img width="650" alt="universal_user_profile" src="https://github.com/reyparma/flutter_auth0_universal/assets/5339530/2e9f1eab-2104-4ffb-b17f-8cec19a9c5b9">
+<img width="650" alt="universal_user_profile" src="https://github.com/reyparma/flutter_auth0_universal/assets/5339530/6ca92ff4-1e1b-4cf3-a74c-e5e3d98ab983">

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_auth0_universal/app/injection_container.dart';
-import 'package:flutter_auth0_universal/features/authentication/domain/entities/user_entity.dart';
 import 'package:flutter_auth0_universal/features/authentication/presentation/bloc/authentication_bloc.dart';
 import 'package:flutter_auth0_universal/features/user_profile/presentation/bloc/user_profile_bloc.dart';
-import 'package:hive/hive.dart';
 
 class UserProfilePage extends StatelessWidget {
   const UserProfilePage({super.key});
@@ -28,8 +26,8 @@ class UserProfilePage extends StatelessWidget {
               child: Column(children: [
                 const Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: Text(
-                      'Use the "--web-renderer=html" option\n to show the picture avatar properly', textAlign: TextAlign.center),
+                  child: (kIsWeb) ? Text(
+                      'Use the "--web-renderer=html" option\n to show the picture avatar properly', textAlign: TextAlign.center): SizedBox(),
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
